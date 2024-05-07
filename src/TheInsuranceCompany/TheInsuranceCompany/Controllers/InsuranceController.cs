@@ -60,5 +60,20 @@ namespace TIC.WebAPI.Controllers
                 throw;
             }
         }
+        [HttpPost(Name = "GetDutchTravelInsurances")]
+        public List<GetDutchTravelInsurancesResponse> GetDutchTravelInsurances()
+        {
+            try
+            {
+                var insurances = _insuranceDomain.GetDutchTravelInsurances();
+                var mappedResponse = _getInsurancesResponseMapper.Map(insurances);
+                return mappedResponse;
+            }
+            catch (Exception exception)
+            {
+                _logger.Log(LogLevel.Error, exception, exception.Message);
+                throw;
+            }
+        }
     }
 }

@@ -12,4 +12,21 @@ public class GetInsurancesResponseMapper : IGetInsurancesResponseMapper
             Name = insurances.Select(i => i.Name)
         };
     }
+    public List<GetDutchTravelInsurancesResponse> Map(IEnumerable<TravelInsurance> insurances)
+    {
+        List<GetDutchTravelInsurancesResponse> responses = new List<GetDutchTravelInsurancesResponse>();
+
+        foreach (TravelInsurance travelinsurance in insurances)
+        {
+            responses.Add(new GetDutchTravelInsurancesResponse
+            {
+                Name = travelinsurance.Name,
+                Description = travelinsurance.Description,
+                InsurancePremium = travelinsurance.InsurancePremium,
+                InsuredAmount = travelinsurance.InsuredAmount,
+            });
+        }
+
+        return responses;
+    }
 }

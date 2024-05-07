@@ -69,6 +69,21 @@ namespace TIC.ServiceAdapter.Stubs
                     InsurancePremium = 50,
                     InsuredAmount = 25000
                 },
+                new TravelInsurance
+                {
+                    Name = "GamePro Travel Insurance",
+                    Coverage = new List<Country>
+                    {
+                        new()
+                        {
+                            Code = "NL",
+                            Name = "Netherlands"
+                        }
+                    },
+                    Description = "Games are expensive",
+                    InsurancePremium = 70,
+                    InsuredAmount = 30000
+                },
                 new LiabilityInsurance
                 {
                     Name = "A* LiabilityInsurance",
